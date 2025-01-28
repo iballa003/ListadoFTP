@@ -25,9 +25,9 @@ class FTPConnector {
         if (this.clienteFtp == null || !this.clienteFtp.isConnected()) {
             clienteFtp = new FTPClient();
             try {
-                clienteFtp.connect("ftp.rediris.es");
+                clienteFtp.connect(hostname);
                 clienteFtp.enterLocalPassiveMode();
-                clienteFtp.login("anonymous", "");
+                clienteFtp.login(username, password);
             }
             catch(IOException io) {
                 io.printStackTrace();
